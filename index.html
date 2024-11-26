@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>部屋ごとのカレンダー</title>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- サイドバー -->
+        <aside class="sidebar">
+            <h2>メニュー</h2>
+            <ul>
+                <li><a href="#" onclick="showCalendar('general')">全体カレンダー</a></li>
+            </ul>
+            <hr>
+            <h3>部屋リスト</h3>
+            <ul>
+                <li><a href="#" onclick="showCalendar('room201')">201号室</a></li>
+                <li><a href="#" onclick="showCalendar('room202')">202号室</a></li>
+                <li><a href="#" onclick="showCalendar('room203')">203号室</a></li>
+            </ul>
+        </aside>
+
+        <!-- メインコンテンツ -->
+        <main class="content">
+            <h1 id="calendar-title">全体カレンダー</h1>
+            <div id="calendar"></div>
+        </main>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
